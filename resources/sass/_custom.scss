@@ -1,0 +1,24 @@
+button span {
+    max-width: 0;
+    overflow: hidden;
+    font-weight: bold;
+    vertical-align: top;
+    white-space: nowrap;
+    display: inline-block;
+    transition: max-width 0.5s;
+    -webkit-transition: max-width 0.5s;
+}
+
+button:hover span {
+    max-width: 6rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
