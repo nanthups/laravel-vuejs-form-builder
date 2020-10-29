@@ -52947,6 +52947,8 @@ var FormBuilder = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         field: "single_line",
         isRequired: false,
         isPlaceholderVisible: false,
+        isHelpBlockVisible: true,
+        helpBlockText: "Please input your helpblock here...",
         span: 6
       }, {
         fieldType: "MultiLineInput",
@@ -52955,6 +52957,8 @@ var FormBuilder = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         field: "multi_line",
         isRequired: false,
         isPlaceholderVisible: false,
+        isHelpBlockVisible: true,
+        helpBlockText: "Please input your helpblock here...",
         span: 12
       }, {
         fieldType: "NameInput",
@@ -52989,6 +52993,8 @@ var FormBuilder = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         field: "number",
         isRequired: false,
         isPlaceholderVisible: false,
+        isHelpBlockVisible: true,
+        helpBlockText: "Please input your helpblock here...",
         span: 6
       }]
     };
@@ -53015,8 +53021,8 @@ var FormBuilder = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/nanthu/Downloads/Documents/Laravel/custom-form-builder/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/nanthu/Downloads/Documents/Laravel/custom-form-builder/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/logezy/Desktop/Projects/form-builder/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/logezy/Desktop/Projects/form-builder/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

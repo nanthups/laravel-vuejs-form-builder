@@ -27,6 +27,8 @@ export const FormBuilder = new Vue({
                     field: "single_line",
                     isRequired: false,
                     isPlaceholderVisible: false,
+                    isHelpBlockVisible: true,
+                    helpBlockText: "Please input your helpblock here...",
                     span: 6,
                 },
                 {
@@ -36,6 +38,8 @@ export const FormBuilder = new Vue({
                     field: "multi_line",
                     isRequired: false,
                     isPlaceholderVisible: false,
+                    isHelpBlockVisible: true,
+                    helpBlockText: "Please input your helpblock here...",
                     span: 12,
                 },
                 {
@@ -73,6 +77,8 @@ export const FormBuilder = new Vue({
                     field: "number",
                     isRequired: false,
                     isPlaceholderVisible: false,
+                    isHelpBlockVisible: true,
+                    helpBlockText: "Please input your helpblock here...",
                     span: 6,
                 },
             ],
