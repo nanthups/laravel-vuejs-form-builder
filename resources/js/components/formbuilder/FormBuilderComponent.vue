@@ -34,11 +34,11 @@
 					<div class="row justify-content-center" v-if="form.length === 0">
 						<h4 class="m-2 text-muted text-uppercase font-weight-bold"> Drop elements below </h4>
 					</div>
-					<div class="form-row drag-area" v-on:dblclick="() => { activeField = [] }" @drop="onDropElement($event)" @dragover.prevent @dragenter.prevent>
+					<div class="form-row drag-area" :class="[{ 'ghost-class' : ghostClass }]" v-on:dblclick="() => { activeField = [] }" v-on:drop="onDropElement($event)" v-on:dragover.prevent v-on:dragenter="() => { ghostClass = true }" v-on:dragleave="() => { ghostClass = false }">
 						<template v-for="(field, index) in form">
 							<div class="form-group" :class="[`col-${field.span}`, { 'active': field === activeField }]" v-on:click="editFieldProperties(field)" :key="index">
 								<span class="form-selected-label" v-text="field.text"></span>
-								<div draggable="true" class="draggable" @dragstart="dragStart(index, $event)" @dragend="dragEnd" @drop="dragFinish(index)" @dragover.prevent @dragenter.prevent>
+								<div draggable="true" class="draggable" v-on:dragstart="dragStart(index, $event)" v-on:dragend="dragEnd" v-on:drop="dragFinish(index)" v-on:dragover.prevent v-on:dragenter.prevent>
 									<compnent :is="field.fieldType" :currentField="field"></compnent>
 								</div>
 								<div class="btn-group form-action-list">
@@ -85,6 +85,7 @@ export default {
 		return {
 			dragging: -1,
 			activeField: [],
+			ghostClass: false
 		}
 	},
 	components: FormBuilder.$options.components,
@@ -94,13 +95,14 @@ export default {
 			if (field) {
 				this.form.push(JSON.parse(field));
 			}
+			this.ghostClass = false;
 		},
 		dragStart(which, event) {
 			this.dragging = which;
 			event.dataTransfer.dropEffect = 'move'
 		},
 		dragEnd(event) {
-			this.dragging = -1
+			this.dragging = -1;
 		},
 		dragFinish(to) {
 			if (to === -1) {
@@ -216,6 +218,21 @@ export default {
 				display: inline-block;
 			}
 		}
+	}
+}
+.ghost-class {
+	&:before {
+		left: 50%;
+		color: #3A8EE6;
+		font-size: 10px;
+		padding: 0 10px;
+		line-height: 15px;
+		position: absolute;
+		border-radius: 10px;
+		background-color: #ECF5FF;
+		transform: translateX(-50%);
+		content: "Drag the field here";
+		border-bottom: 2px solid #3A8EE6;
 	}
 }
 </style>

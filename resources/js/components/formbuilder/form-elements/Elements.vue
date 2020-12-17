@@ -19,7 +19,7 @@ export default {
 	},
 	methods: {
 		dragStart(field, event) {
-			event.dataTransfer.dropEffect = "copy"
+			event.dataTransfer.dropEffect = "move"
 			event.dataTransfer.setData('field', JSON.stringify(field));
 		},
 	}

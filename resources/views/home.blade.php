@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="container">
-	<form-component></form-component>
+	<custom-component-component></custom-component-component>
 </div>
 @endsection
 

@@ -6,12 +6,12 @@
 			<ul class="nav nav-tabs">
 				<li class="nav-item">
 					<a href="#" class="nav-link" :class="[{'active' : currentComponent == 'form-builder-component'}]" v-on:click="() => { currentComponent = 'form-builder-component' }"> 
-						Form Builder 
+						Builder 
 					</a>
 				</li>
 				<li class="nav-item">
 					<a href="#" class="nav-link" :class="[{'active' : currentComponent == 'form-view-component'}]" v-on:click="() => { currentComponent = 'form-view-component' }"> 
-						Form View 
+						View 
 					</a>
 				</li>
 			</ul>
